@@ -1,1 +1,57 @@
-<p>detalhes-filme works!</p>
+<div class="container d-grip gap-3 y-4">
+
+    <div class="row ">
+        <div class="d-flex align-items-center">
+            <h2 class="text-light">{{filme.nomePt}}</h2>
+            <div class="ms-auto text-end">
+                <button (click)="toggleFavorito(filme)" class="custom-favorito-button">
+                    <i [ngClass]="{'bi bi-star-fill': favorito, 'bi bi-star': !favorito}"></i>
+                    {{ favorito ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos' }}
+                  </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row gap-3">
+        <div class="col-lg-3">
+            <img class="img-fluid rounded-3" src="{{filme.posterUrl}}">
+        </div>
+        <div class="col-lg">
+            <div class="ratio ratio-21x9 h-100">
+                <iframe class="rounded-3" frameborder="0" allowfullscreen [src]="filme.videoUrl"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex m-3 gap-2 mx-lg-0">
+        <span class="badge rounded-pill fs-7 px-2 py-2 bg-danger-subtle text-dark">Generos</span>
+    </div>
+
+    <div class="row border-top">
+        <h5 class="f-5 text-light align-items-justify mt-1">{{filme.sinopse}}</h5>
+    </div>
+    <div class="row border-top">
+        <div class="col-lg-1 d-flex align-items-center">
+            <h5 class="f-5 text-light fw-bolder mt-1">Direção:</h5>
+        </div>
+        <div class="col-lg-3 d-flex align-items-start">
+            <p class="text-light text-decoration-none mb-0 mt-1">{{ filme.diretor.name }}</p>
+        </div>
+    </div>
+
+    <div class="row border-top d-flex">
+        <div class="col-lg-1">
+            <h5 class="f-5 text-light fw-bolder mt-1">Elenco:</h5>
+        </div>
+        <div class="col-12 d-flex flex-wrap">
+            <div *ngFor="let artista of filme.elenco" class="col-sm col-md-6 col-lg-2 mb-3">
+                <div class="d-grid gap-3 text-center">
+                    <p class="text-light text-decoration-none mb-0">{{artista.name}}</p>
+                    <img class="img-fluid rounded-3" src="https://image.tmdb.org/t/p/w200/{{artista.profile_path}}" alt="{{artista.name}}">
+                    <a class="fs-7 link-warning text-decoration-none fst-italic">{{artista.character}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -4,6 +4,7 @@ import { CardFilmeComponent } from './shared/card-filme/card-filme.component'
 import { ListaFilmeComponent } from './shared/lista-filme/lista-filme.component'
 import { HomeComponent } from './view/home/home.component'
 import { DetalhesFilmeComponent } from './view/detalhes-filme/detalhes-filme.component'
+import { FavoritoFilmeComponent } from './view/favorito-filme/favorito-filme.component'
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'view/home',
+    path: 'view/home/:tipo',
     component: HomeComponent
   },
   {
@@ -24,8 +25,12 @@ const routes: Routes = [
     component: ListaFilmeComponent
   },
   {
-    path: 'shared/detalhes-filme',
+    path: 'view/detalhes-filme/:id',
     component: DetalhesFilmeComponent
+  },
+  {
+    path: 'view/favorito-filme',
+    component: FavoritoFilmeComponent
   }
 ]
 

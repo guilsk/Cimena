@@ -1,0 +1,13 @@
+<p>favorito-filme works!</p>
+<div class="row">
+    <div class="col-md-4  " *ngFor="let filme of filmesFavoritos">
+        <div class="card-container card" routerLink="/view/filmedetalhe/{{ filme.id }}">
+            <img [src]="filme.posterUrl" alt="{{ filme.nomePt }}" class="card-img-top ">
+            <div class="card-body">
+                <h5 class="card-title">{{ filme.nomePt }}</h5>
+                <p class="card-text">{{ filme.sinopse }}</p>
+                <button class="custom-favorito-button " (click)="removerDosFavoritos(filme)">Remover dos Favoritos</button>
+            </div>
+        </div>
+    </div>
+</div>

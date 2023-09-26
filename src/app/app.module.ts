@@ -11,6 +11,8 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { DetalhesFilmeComponent } from './view/detalhes-filme/detalhes-filme.component';
 import { ListaFilmeComponent } from './shared/lista-filme/lista-filme.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FavoritoFilmeComponent } from './view/favorito-filme/favorito-filme.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     DetalhesFilmeComponent,
     ListaFilmeComponent,
+    FavoritoFilmeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

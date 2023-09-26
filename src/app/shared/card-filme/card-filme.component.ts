@@ -1,5 +1,4 @@
 import { Component, Input, Output } from '@angular/core';
-import { Router } from '@angular/router';
 import { Filme } from 'src/app/model/filme';
 
 @Component({
@@ -8,9 +7,14 @@ import { Filme } from 'src/app/model/filme';
   styleUrls: ['./card-filme.component.css']
 })
 export class CardFilmeComponent {
-  @Input() filme: Filme
-
-  constructor(){
-    this.filme = new Filme(0, '', '', [], '', '', '', '', '', [])
+  @Input() filme: Filme = {
+    id: 0,
+    nomePt: '',
+    nomeOriginal: '',
+    generos: [],
+    sinopse: '',
+    posterUrl: '',
+    videoUrl: undefined,
+    anoLancamento: ''
   }
 }

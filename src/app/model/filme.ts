@@ -1,3 +1,5 @@
+import { Artista } from "./artista"
+
 export class Filme{
     id: number
     nomePt: string
@@ -5,12 +7,12 @@ export class Filme{
     generos: string[]
     sinopse: string
     posterUrl: string
-    videoUrl: string
+    videoUrl: any
     anoLancamento: string
-    diretor: string
-    elenco: string[]
+    diretor?: Artista
+    elenco?: Artista[]
 
-    constructor(id: number, nomePt: string, nomeOriginal: string, generos: string[], sinopse: string, posterUrl: string, videoUrl: string, anoLancamento: string, diretor: string, elenco: string[]) {
+    constructor(id: number, nomePt: string, nomeOriginal: string, generos: string[], sinopse: string, posterUrl: string, videoUrl: any, anoLancamento: string, diretor: Artista, elenco: Artista[]) {
         this.id = id
         this.nomePt = nomePt
         this.nomeOriginal = nomeOriginal

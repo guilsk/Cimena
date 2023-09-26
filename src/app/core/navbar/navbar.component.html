@@ -1,10 +1,12 @@
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid px-lg-4">
-        <a class="navbar-brand text-primary fw-bold" href="#">Cimena</a>
+        <a class="navbar-brand text-primary fw-bold" href="#">Cimena do Guil</a>
         <div class="d-flex">
-            <a routerLink="/" class="nav-link mx-2">Meus Favoritos</a>
-            <a routerLink="/" class="nav-link mx-2">Mais Populares</a>
-            <a routerLink="/" class="nav-link mx-2">Mais Assistidos</a>
+            <input class="rounded-1" type="search" [(ngModel)]="valorInput" placeholder="Pesquisar Filmes...">
+            <button class="btn btn-primary mx-2" type="submit" [routerLink]="['/view/home', valorInput]">Pesquisar</button>
+            <a routerLink="view/favorito-filme" class="nav-link mx-2 my-2">Meus Favoritos</a>
+            <a routerLink="view/home/populares" class="nav-link mx-2 my-2">Mais Populares</a>
+            <a routerLink="view/home/maisassistidos" class="nav-link mx-2 my-2">Mais Assistidos</a>
         </div>
     </div>
 </nav>
