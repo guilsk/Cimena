@@ -11,8 +11,11 @@ import { Artista } from "../model/artista";
 export class FilmeService {
 
     chave = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNjYzMTRmODdjYzAzZWIzOGQ5M2FlNzNhN2EwODVlYSIsInN1YiI6IjY0Zjc3OTFlNGNjYzUwMDEzODhjZjMyMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.KVSgGIzzpgGgi7p12FG2DBh8yT76qWE8_ITI8L6UBdw'
+    page: number
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {
+        this.page = 1
+    }
 
     pesquisarPorId(id: string): Observable<Filme> {
         const url = 'https://api.themoviedb.org/3/movie/' + id + '?language=pt-BR';
@@ -23,7 +26,8 @@ export class FilmeService {
     }
 
     PesquisarListaPopulares(): Observable<Filme[]> {
-        const url = 'https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=1'
+        const url = 'https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=' + this.page
+        console.log(url)
 
         return this.http.get<any>(url,this.obterHeaderAutorizacao()).pipe(
             map(res => res.results),
@@ -32,7 +36,7 @@ export class FilmeService {
     }
 
     PesquisarListaMaisAssistidos(): Observable<Filme[]> {
-        const url = 'https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=1'
+        const url = 'https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=' + this.page
 
         return this.http.get<any>(url,this.obterHeaderAutorizacao()).pipe(
             map(res => res.results),

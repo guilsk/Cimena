@@ -18,6 +18,29 @@ export class ListaFilmeComponent implements OnInit {
     this.CarregarFilmes()
   }
 
+  TrocarPagina(id: number){
+    this.filmeService.page = Number(id)
+    this.CarregarFilmes()
+  }
+
+  AnalisarComando(comando: string){
+    if(comando == 'voltar'){
+      if(this.filmeService.page > 1){
+        this.filmeService.page--
+        this.TrocarPagina(this.filmeService.page)
+      }
+    }else if(comando == 'avancar'){
+      if(this.filmeService.page < 20){
+        this.filmeService.page++
+        this.TrocarPagina(this.filmeService.page)
+      }
+    }else if(comando == 'primeira'){
+      this.TrocarPagina(1)
+    }else if(comando == 'ultima'){
+      this.TrocarPagina(20)
+    }
+  }
+
   CarregarFilmes(){
     this.route.paramMap.subscribe((params) => {
       const tipo = params.get('tipo')

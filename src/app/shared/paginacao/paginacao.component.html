@@ -1,1 +1,11 @@
-<p>paginacao works!</p>
+<nav class="navbar">
+  <div class="container-fluid justify-content-center">
+      <ul class="pagination">
+        <li class="page-item"><button class="button page-link" (click)="primeiraPagina()"><<</button></li>
+        <li class="page-item"><button class="button page-link" (click)="voltarPagina()">Anterior</button></li>
+        <li *ngFor="let pagina of paginas" class="page-item"><button class="button page-link" (click)="irParaPagina(pagina)">{{pagina}}</button></li>
+        <li class="page-item"><button class="button page-link" (click)="avancarPagina()">Próximo</button></li>
+        <li class="page-item"><button class="button page-link" (click)="ultimaPagina()">>></button></li>
+      </ul>
+  </div>
+</nav>
