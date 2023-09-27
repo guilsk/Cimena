@@ -19,7 +19,6 @@ export class FilmeService {
 
     pesquisarPorId(id: string): Observable<Filme> {
         const url = 'https://api.themoviedb.org/3/movie/' + id + '?language=pt-BR';
-
         return this.http.get<any>(url, this.obterHeaderAutorizacao()).pipe(
             map(obj => this.mapearFilme(obj)),
         )
@@ -28,7 +27,6 @@ export class FilmeService {
     PesquisarListaPopulares(): Observable<Filme[]> {
         const url = 'https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=' + this.page
         console.log(url)
-
         return this.http.get<any>(url,this.obterHeaderAutorizacao()).pipe(
             map(res => res.results),
             map(objetos => this.mapearLista(objetos))
@@ -37,7 +35,6 @@ export class FilmeService {
 
     PesquisarListaMaisAssistidos(): Observable<Filme[]> {
         const url = 'https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=' + this.page
-
         return this.http.get<any>(url,this.obterHeaderAutorizacao()).pipe(
             map(res => res.results),
             map(objetos => this.mapearLista(objetos))

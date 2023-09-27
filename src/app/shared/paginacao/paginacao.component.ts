@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core'
-import { FilmeService } from 'src/app/service/filme.service'
 
 @Component({
   selector: 'app-paginacao',
@@ -11,7 +10,7 @@ export class PaginacaoComponent {
   @Output() onEnviarPagina = new EventEmitter<number>();
   @Output() onEnviarComando = new EventEmitter<string>();
 
-  constructor(private filmeService: FilmeService){}
+  constructor(){}
 
   irParaPagina(id: any){
     this.onEnviarPagina.emit(id)
