@@ -45,9 +45,9 @@ export class ListaFilmeComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       const tipo = params.get('tipo')
 
-      if(tipo == "populares"){
+      if(tipo == "popular"){
         this.GerarListaPopulares()
-      }else if(tipo == "maisassistidos"){
+      }else if(tipo == "top_rated"){
         this.GerarListaMaisAssistidos()
       }else{
         this.Pesquisar(tipo)

@@ -9,7 +9,7 @@ import { FavoritoFilmeComponent } from './view/favorito-filme/favorito-filme.com
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'view/home/populares',
+    redirectTo: 'view/home/popular',
     pathMatch: 'full'
   },
   {
