@@ -1,7 +1,6 @@
-<p>favorito-filme works!</p>
 <div class="row">
-    <div class="col-md-4  " *ngFor="let filme of filmesFavoritos">
-        <div class="card-container card" routerLink="/view/filmedetalhe/{{ filme.id }}">
+    <div class="col-md-4" *ngFor="let filme of filmesFavoritos">
+        <div class="card-container card" routerLink="/view/detalhes-filme/{{ filme.id }}">
             <img [src]="filme.posterUrl" alt="{{ filme.nomePt }}" class="card-img-top ">
             <div class="card-body">
                 <h5 class="card-title">{{ filme.nomePt }}</h5>

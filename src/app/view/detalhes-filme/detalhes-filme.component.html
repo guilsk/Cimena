@@ -24,7 +24,9 @@
     </div>
 
     <div class="d-flex m-3 gap-2 mx-lg-0">
-        <span class="badge rounded-pill fs-7 px-2 py-2 bg-danger-subtle text-dark">Generos</span>
+        <ng-container *ngFor="let genero of filme.generos">
+            <span class="badge rounded-pill fs-7 px-2 py-2 bg-danger-subtle text-dark">{{genero}}</span>
+        </ng-container>
     </div>
 
     <div class="row border-top">
