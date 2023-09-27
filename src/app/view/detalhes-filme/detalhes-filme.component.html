@@ -2,7 +2,7 @@
 
     <div class="row ">
         <div class="d-flex align-items-center">
-            <h2 class="text-light">{{filme.nomePt}}</h2>
+            <h2 class="">{{filme.nomePt}}</h2>
             <div class="ms-auto text-end">
                 <button (click)="toggleFavorito(filme)" class="custom-favorito-button">
                     <i [ngClass]="{'bi bi-star-fill': favorito, 'bi bi-star': !favorito}"></i>
@@ -30,25 +30,25 @@
     </div>
 
     <div class="row border-top">
-        <h5 class="f-5 text-light align-items-justify mt-1">{{filme.sinopse}}</h5>
+        <h5 class="f-5 align-items-justify mt-1">{{filme.sinopse}}</h5>
     </div>
     <div class="row border-top">
         <div class="col-lg-1 d-flex align-items-center">
-            <h5 class="f-5 text-light fw-bolder mt-1">Direção:</h5>
+            <h5 class="f-5 fw-bolder mt-1">Direção:</h5>
         </div>
         <div class="col-lg-3 d-flex align-items-start">
-            <p class="text-light text-decoration-none mb-0 mt-1">{{ filme.diretor.name }}</p>
+            <p class=" text-decoration-none mb-0 mt-1">{{ filme.diretor.name }}</p>
         </div>
     </div>
 
     <div class="row border-top d-flex">
         <div class="col-lg-1">
-            <h5 class="f-5 text-light fw-bolder mt-1">Elenco:</h5>
+            <h5 class="f-5 fw-bolder mt-1">Elenco:</h5>
         </div>
         <div class="col-12 d-flex flex-wrap">
             <div *ngFor="let artista of filme.elenco" class="col-sm col-md-6 col-lg-2 mb-3">
                 <div class="d-grid gap-3 text-center">
-                    <p class="text-light text-decoration-none mb-0">{{artista.name}}</p>
+                    <p class=" text-decoration-none mb-0">{{artista.name}}</p>
                     <img class="img-fluid rounded-3" src="https://image.tmdb.org/t/p/w200/{{artista.profile_path}}" alt="{{artista.name}}">
                     <a class="fs-7 link-warning text-decoration-none fst-italic">{{artista.character}}</a>
                 </div>
